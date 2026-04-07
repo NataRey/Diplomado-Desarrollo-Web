@@ -56,9 +56,41 @@ const carro = {
 
 
     // metodo para girar el volante
-    
+    girarVolanteD: function(){
+        console.log(`El carro esta girando a la derecha`);
+    },
 
-}
+    girarVolanteI: function(mensaje){
+        this.mensaje="";
+        console.log(mensaje);
+    }
+};
+
+// ahora hacemos los llamados a esos metodos
+/** Sintaxis nombreObjeto().nombreMetodo */
+
+console.log(`El carro esta apagado`);
+carro.encender("En relenti");
+carro.acelerar(10);
+carro.acelerar(30);
+carro.acelerar(50);
+carro.frenar(30);
+carro.girarVolanteD();
+carro.acelerar(20);
+carro.frenar(10);
+carro.girarVolanteI("El carro esta girando a la izquierda");
+carro.frenar(30);
+carro.frenar(30);
+carro.frenar(15);
+carro.acelerar(5);
+carro.frenar(5);
+carro.frenar();
+
+
+
+
+
+
 
 
 
