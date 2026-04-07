@@ -115,3 +115,91 @@ console.log(edades);
 
 
 // console.log("El orden correcto es: "+edades);
+
+// filter() // crea un array con todos los elementos que pasan el filtro 
+
+let rangosEmpleados = [
+    {nombre:"Johan", rango:"admin", edad: "15"},
+    {nombre:"Breidy", rango:"user", edad: 15},
+    {nombre:"Isabella", rango:"admin", edad: 21}
+];
+
+let administradores = rangosEmpleados.filter(function(rol){
+    return rol.edad === 15 ;
+});
+
+//console.log("Los administradores son: ", administradores);
+
+
+//map()crea otro array con los resultados de la funcion que le indique 
+
+let puntuacionExamen =[80,45,90,60,70];
+
+//console.log("Las puntuaciones originasles son: ", puntuacionExamen);
+
+let mensajeDeAprobacion = puntuacionExamen.map(function(puntuacion){
+    if(puntuacion >= 60){
+        return "Aprobado con " + puntuacion;
+    }else{
+        return "Reprobado con " + puntuacion;
+    }
+});
+//console.log(mensajeDeAprobacion);
+//console.log(puntuacionExamen);
+
+//reduce() // reduce los datos ingresados con una funcion de izq a der y lo reduce hasta un unico valor 
+
+let palabras =["Hola", "mundo", "desde", "js"];
+//console.log(palabras);
+
+let fraseCompleta = palabras.reduce(function(fraseConstruida, palabraActual){
+    return fraseConstruida + " " + palabraActual;
+});
+
+//console.log("La frase completa es: "+ fraseCompleta);
+
+
+let num = [ 100,75,120,90,50];
+//console.log("puntuaciones de cada nivel" , num);
+
+let Tpuntos = num.reduce(function(acumulador, puntuacionActual){
+    //console.log(`Sumando: ${acumulador} (lo que llevo) + ${puntuacionActual} (lo que acabo de encontrar)`);
+    return acumulador + puntuacionActual;
+},0);
+
+//console.log(Tpuntos);
+
+
+// find() encontrar el primer elemento que cumpla con el parametro
+
+let primerRangoEncontrado = rangosEmpleados.find(function(rol){
+    return rol.rango ==="admin";
+});
+
+//console.log("la primera persona con el rango, " , primerRangoEncontrado);
+
+// findIndex() Devuelve el indice del primer elemento que encuentre que cumpla con la funcion de prueba
+
+
+let misPeliculas=[
+    {nombre:"Harryy Potter",genero:"accion"}, //0
+    {nombre:"LLuvia de hamburguesas",genero:"Fantasia"},//1
+    {nombre:"La guija",genero:"Fantasia"},//2
+    {nombre:"mision imposible",genero:"Fantasia"},//3
+];
+
+let indicePelicula = misPeliculas.findIndex(function(g){
+    return g.genero === "Fantasia";
+});
+
+let primerGenero = misPeliculas.find(function(g){
+    return g.genero === "Fantasia";
+});
+
+let primerGenero2 = misPeliculas.filter(function(g){
+    return g.genero === "Fantasia";
+});
+
+console.log("La primera posicion de genero Fantasia que encontre fue : ",indicePelicula);
+console.log("La primera coincidencia de genero Fantasia que encontre fue : ",primerGenero);
+console.log("Los que encontre del genero Fantasia son : ",primerGenero2);
