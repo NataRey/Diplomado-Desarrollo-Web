@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>E-commerce Admin</title>
+</head>
+<body>
+    <header>
+        <h1>Mi tienda Virtual</h1>
+        <nav id="nav-actions">
+            <button id="btn-show-login">Login Admin</button>
+            <button id="btn-logout" class="hidden">Cerrar sesion</button>
+        </nav>
+    </header>
+    <main>
+        <section id="login-section" class="hidden">
+            <input type="text" id="user-input" placeholder="User">
+            <input type="password" id="pass-input" placeholder="Password">
+            <button id="btn-login">Ingresar</button>
+            <p id="login-error" class="error hidden">Credenciales incorrectas</p>
+        </section>
+
+        <section id="admin-section" class="hidden">
+            <div class="card">
+                <h2>Administracion de productos</h2>
+                <form id="product-form">
+                    <input type="hidden" id="edit-index">
+                    <input type="text" id="prod-name" placeholder="Nombre del producto">
+                    <input type="number" id="prod-price" placeholder="Precio">
+                    <input type="text" id="prod-img" placeholder="url de imagen">
+                    <button type="submit" id="btn-save-product">Guardar Producto</button>
+                </form>
+            </div>
+        </section>
+        <section id="store-section">
+            <h2>Nuestros productos</h2>
+            <div id="products-grid" class="grid-container">                
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
