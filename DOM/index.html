@@ -1,45 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce</title>
     <link rel="stylesheet" href="style.css">
-    <title>E-commerce Admin</title>
 </head>
 <body>
+
     <header>
-        <h1>Mi tienda Virtual</h1>
+        <h1>Mi Tienda Virtual</h1>
         <nav id="nav-actions">
-            <button id="btn-show-login">Login Admin</button>
-            <button id="btn-logout" class="hidden">Cerrar sesion</button>
+            <button id="btn-show-login">Login Administrador</button>
+            <button id="btn-logout" class="hidden">Cerrar Sesión</button>
         </nav>
     </header>
+
     <main>
         <section id="login-section" class="hidden">
-            <input type="text" id="user-input" placeholder="User">
-            <input type="password" id="pass-input" placeholder="Password">
-            <button id="btn-login">Ingresar</button>
-            <p id="login-error" class="error hidden">Credenciales incorrectas</p>
+            <div class="card">
+                <h2>Acceso Admin</h2>
+                <input type="text" id="user-input" placeholder="Usuario">
+                <input type="password" id="pass-input" placeholder="Contraseña">
+                <button id="btn-login">Ingresar</button>
+                <p id="login-error" class="error hidden">Credenciales incorrectas</p>
+            </div>
         </section>
 
         <section id="admin-section" class="hidden">
             <div class="card">
-                <h2>Administracion de productos</h2>
+                <h2>Gestión de Productos</h2>
                 <form id="product-form">
                     <input type="hidden" id="edit-index">
-                    <input type="text" id="prod-name" placeholder="Nombre del producto">
-                    <input type="number" id="prod-price" placeholder="Precio">
-                    <input type="text" id="prod-img" placeholder="url de imagen">
+                    <input type="text" id="prod-name" placeholder="Nombre del producto" required>
+                    <input type="number" id="prod-price" placeholder="Precio" required>
+                    <input type="text" id="prod-img" placeholder="URL de la imagen (Ej: https://...)" required>
                     <button type="submit" id="btn-save-product">Guardar Producto</button>
                 </form>
             </div>
         </section>
+
         <section id="store-section">
-            <h2>Nuestros productos</h2>
-            <div id="products-grid" class="grid-container">                
-            </div>
+            <h2>Nuestros Productos</h2>
+            <div id="products-grid" class="grid-container">
+                </div>
         </section>
     </main>
+     
+
     <script src="script.js"></script>
 </body>
 </html>
